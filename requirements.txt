@@ -1,0 +1,7 @@
+streamlit>=1.33,<2.0
+requests>=2.31,<3.0
+beautifulsoup4>=4.12,<5.0
+lxml>=4.9,<5.0
+PyMuPDF>=1.24,<2.0
+playwright>=1.46,<2.0
+python-dotenv>=1.0,<2.0
