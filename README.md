@@ -1,16 +1,114 @@
-# AI Career Decision Engine
+# PathPilot — AI Career Decision Engine
 
-A polished Streamlit MVP that helps early-career job seekers decide in a few minutes whether a role is worth applying to.
+PathPilot is an AI-powered decision support tool that helps students and early-career applicants decide whether an opportunity is worth applying to.
+
+Instead of manually comparing a resume against a job post, PathPilot extracts role information, parses resume content, evaluates fit across multiple dimensions, flags potential risks, and returns a practical recommendation: **Apply**, **Consider**, or **Skip**.
+
+## Why this project exists
+
+Students and early-career applicants often face the same problem:
+
+- job descriptions are long, vague, or inflated
+- online platforms show openings, but rarely explain whether a role is actually a good fit
+- manually screening each opportunity takes too much time
+- many applicants apply too broadly without a clear decision process
+
+PathPilot is built to make the first application decision faster, clearer, and more intentional.
+
+## Core idea
+
+PathPilot is not just a resume keyword checker.
+
+It is designed as a lightweight decision engine that combines:
+
+- resume parsing
+- job description understanding
+- fit evaluation
+- risk detection
+- recommendation output
+
+The goal is simple: help users decide **where to focus their time**, instead of blindly applying everywhere.
 
 ## What the app does
 
-- Extracts job text from a URL when possible, then falls back to pasted job description text
-- Parses PDF resumes with PyMuPDF
-- Scores fit on skills, keywords, education, and experience
-- Flags company and posting risk signals
-- Produces a final recommendation: `Apply`, `Consider`, or `Skip`
-- Works fully in deterministic demo mode without any paid API key
-- Optionally upgrades the final JSON output with an OpenAI-compatible API if environment variables are configured
+- extracts job text from a URL when possible
+- falls back to pasted job description text when scraping is unavailable
+- parses PDF resumes with PyMuPDF
+- evaluates fit across skills, keywords, education, and experience
+- flags company or posting risk signals
+- returns a final recommendation:
+  - **Apply**
+  - **Consider**
+  - **Skip**
+- runs end-to-end in deterministic demo mode without requiring a paid API key
+- optionally enhances final reasoning with an OpenAI-compatible API
+
+## How it works
+
+The current MVP follows this workflow:
+
+1. **Input**
+   - upload a PDF resume
+   - provide a job URL or paste a job description
+
+2. **Extraction**
+   - parse resume text
+   - extract job information from the page or pasted content
+
+3. **Matching**
+   - compare resume and role content
+   - identify alignment and gaps across key dimensions
+
+4. **Decision support**
+   - generate a recommendation
+   - surface risk signals
+   - help the user decide whether the opportunity is worth pursuing
+
+## Competitive advantages
+
+### 1. Decision-oriented, not just analysis-oriented
+Many tools stop at “match score” or generic resume feedback.  
+PathPilot is designed to answer a more practical question:
+
+**Should this person apply to this opportunity or not?**
+
+That makes the product more action-focused and more useful in real workflows.
+
+### 2. Built for early-career users
+Most hiring tools are either too generic or too enterprise-focused.  
+PathPilot is specifically designed for:
+
+- students
+- internship applicants
+- entry-level candidates
+- users exploring research or early-career opportunities
+
+### 3. Handles messy real-world inputs
+Job pages are often inconsistent.  
+PathPilot is built with fallback logic, so it can still function when direct job extraction fails by using pasted job description text instead.
+
+### 4. Works without requiring a paid API
+The app can run in deterministic demo mode without API credentials, which makes it easier to test, demo, and iterate.
+
+### 5. Structured output over black-box output
+The logic is designed to produce a more interpretable recommendation rather than only a vague AI-generated answer.
+
+## Who this is for
+
+PathPilot is currently most relevant for:
+
+- students applying for internships
+- early-career applicants screening entry-level roles
+- users exploring whether a research role, internship, or job is realistically worth pursuing
+- anyone who wants faster first-pass filtering before investing time in applications
+
+## Tech stack
+
+- **Python 3.12**
+- **Streamlit**
+- **PyMuPDF**
+- **OpenAI-compatible API** (optional)
+- supporting utility modules for parsing, matching, and recommendation logic
 
 ## Project structure
 
@@ -21,54 +119,7 @@ A polished Streamlit MVP that helps early-career job seekers decide in a few min
 ├── requirements.txt
 ├── README.md
 ├── .env.example
-└── utils
-    ├── __init__.py
-    ├── decision.py
-    ├── helpers.py
-    ├── llm.py
-    ├── parsing.py
-    ├── risk.py
-    └── scoring.py
-```
-
-## Local setup
-
-Use Python 3.11.
-
-```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-If your system uses `python3` for Python 3.11, this also works:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-## Optional LLM mode
-
-The app runs end to end without any API credentials. To enable the optional LLM path:
-
-1. Copy `.env.example` to `.env`
-2. Fill in:
-   - `OPENAI_API_KEY`
-   - `OPENAI_BASE_URL`
-   - `OPENAI_MODEL`
-3. Restart Streamlit
-4. Turn on `Use optional LLM enhancement` in the sidebar
-
-If the LLM call fails, the app gracefully falls back to the built-in demo logic.
-
-## Demo flow
-
-1. Click `Load Demo Sample Data`
-2. Leave the demo resume toggle on
-3. Click `Analyze`
-
-The sample URL is intentionally generic, so the demo shows the fallback path from URL scraping to pasted job description text.
+├── utils/
+├── scripts/
+├── tests/
+└── pages/
