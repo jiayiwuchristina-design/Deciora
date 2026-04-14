@@ -972,7 +972,7 @@ def render_hero(kicker: str, title: str, body: str, footnote: str = "") -> None:
                 _brand_mark_html(hero=True),
                 '<div>',
                 '<div class="hero-brand-name">Deciora</div>',
-                '<div class="hero-brand-tag">Refined decision support for career and research choices</div>',
+                '<div class="hero-brand-tag">Decision support for career and research opportunities</div>',
                 "</div>",
                 "</div>",
                 f'<div class="hero-kicker">{escape(kicker)}</div>',
