@@ -1,125 +1,169 @@
-# ApplyPilot — AI Career Decision Engine
+# Deciora — AI Decision Engine for Career & Research Opportunities
 
-ApplyPilot is an AI-powered decision support tool that helps students and early-career applicants decide whether an opportunity is worth applying to.
+Deciora is an AI-powered decision engine designed to help students and early-career applicants evaluate whether an opportunity is truly worth pursuing.
 
-Instead of manually comparing a resume against a job post, ApplyPilot extracts role information, parses resume content, evaluates fit across multiple dimensions, flags potential risks, and returns a practical recommendation: **Apply**, **Consider**, or **Skip**.
+Instead of optimizing for more applications, Deciora focuses on **better decisions** — helping users determine where to invest their time across both **career opportunities** (jobs, internships) and **research opportunities** (labs, professors, academic projects).
 
-## Why this project exists
+---
 
-Students and early-career applicants often face the same problem:
+## 🚀 Why Deciora exists
 
-- job descriptions are long, vague, or inflated
-- online platforms show openings, but rarely explain whether a role is actually a good fit
-- manually screening each opportunity takes too much time
-- many applicants apply too broadly without a clear decision process
+Today’s applicants are not short of opportunities — they are overwhelmed by them.
 
-ApplyPilot is built to make the first application decision faster, clearer, and more intentional.
+- Job descriptions are often vague, inflated, or inconsistent  
+- Platforms show listings, but rarely explain true fit  
+- Research opportunities are even harder to evaluate  
+- Applicants waste time applying broadly without a clear decision framework  
 
-## Core idea
+Deciora is built to solve a simple but critical problem:
 
-ApplyPilot is not just a resume keyword checker.
+> **Not where you can apply — but where you should apply.**
 
-It is designed as a lightweight decision engine that combines:
+---
 
-- resume parsing
-- job description understanding
-- fit evaluation
-- risk detection
-- recommendation output
+## 🧠 Core idea
 
-The goal is simple: help users decide **where to focus their time**, instead of blindly applying everywhere.
+Deciora is not a resume checker or keyword matcher.
 
-## What the app does
+It is a **decision support system** that evaluates opportunities across multiple dimensions and produces a clear, actionable recommendation.
 
-- extracts job text from a URL when possible
-- falls back to pasted job description text when scraping is unavailable
-- parses PDF resumes with PyMuPDF
-- evaluates fit across skills, keywords, education, and experience
-- flags company or posting risk signals
-- returns a final recommendation:
+The system combines:
+
+- Resume parsing  
+- Opportunity understanding (job + research)  
+- Fit evaluation  
+- Risk detection  
+- Structured recommendation output  
+
+The goal is to help users move from **guessing → evaluating → deciding**.
+
+---
+
+## ⚙️ What the app does
+
+- Extracts opportunity information from a URL (when possible)  
+- Falls back to pasted job / research descriptions  
+- Parses PDF resumes using PyMuPDF  
+- Evaluates fit across:
+  - skills  
+  - experience  
+  - education  
+  - keyword alignment  
+- Flags potential risk signals (e.g., vague roles, unrealistic requirements)  
+- Returns a final recommendation:
   - **Apply**
-  - **Consider**
-  - **Skip**
-- runs end-to-end in deterministic demo mode without requiring a paid API key
-- optionally enhances final reasoning with an OpenAI-compatible API
+  - **Reach**
+  - **Avoid**
+- Runs in deterministic demo mode (no API required)  
+- Optionally enhances reasoning with an OpenAI-compatible API  
 
-## How it works
+---
 
-The current MVP follows this workflow:
+## 🔍 How it works
 
-1. **Input**
-   - upload a PDF resume
-   - provide a job URL or paste a job description
+### 1. Input
+- Upload a PDF resume  
+- Provide a job URL or research description  
 
-2. **Extraction**
-   - parse resume text
-   - extract job information from the page or pasted content
+### 2. Extraction
+- Parse resume content  
+- Extract structured information from the opportunity  
 
-3. **Matching**
-   - compare resume and role content
-   - identify alignment and gaps across key dimensions
+### 3. Matching
+- Compare user profile with opportunity requirements  
+- Identify alignment, gaps, and signals  
 
-4. **Decision support**
-   - generate a recommendation
-   - surface risk signals
-   - help the user decide whether the opportunity is worth pursuing
+### 4. Decision
+- Generate a recommendation  
+- Surface risks and trade-offs  
+- Help the user decide whether to proceed  
 
-## Competitive advantages
+---
 
-### 1. Decision-oriented, not just analysis-oriented
-Many tools stop at “match score” or generic resume feedback.  
-ApplyPilot is designed to answer a more practical question:
+## 🆚 Competitive advantages
 
-**Should this person apply to this opportunity or not?**
+### 1. Decision-oriented (not just analysis)
+Most tools stop at “match scores.”  
+Deciora answers a more practical question:
 
-That makes the product more action-focused and more useful in real workflows.
+> **Should you pursue this opportunity or not?**
 
-### 2. Built for early-career users
-Most hiring tools are either too generic or too enterprise-focused.  
-ApplyPilot is specifically designed for:
+---
 
-- students
-- internship applicants
-- entry-level candidates
-- users exploring research or early-career opportunities
+### 2. Covers both career and research paths
+Unlike traditional tools, Deciora supports:
 
-### 3. Handles messy real-world inputs
-Job pages are often inconsistent.  
-ApplyPilot is built with fallback logic, so it can still function when direct job extraction fails by using pasted job description text instead.
+- internships & jobs  
+- research labs & professors  
 
-### 4. Works without requiring a paid API
-The app can run in deterministic demo mode without API credentials, which makes it easier to test, demo, and iterate.
+This makes it more aligned with real student decision flows.
 
-### 5. Structured output over black-box output
-The logic is designed to produce a more interpretable recommendation rather than only a vague AI-generated answer.
+---
 
-## Who this is for
+### 3. Built for early-career users
+Designed specifically for:
 
-ApplyPilot is currently most relevant for:
+- students  
+- internship applicants  
+- entry-level candidates  
+- users exploring research pathways  
 
-- students applying for internships
-- early-career applicants screening entry-level roles
-- users exploring whether a research role, internship, or job is realistically worth pursuing
-- anyone who wants faster first-pass filtering before investing time in applications
+---
 
-## Tech stack
+### 4. Works with messy real-world inputs
+- Handles inconsistent job pages  
+- Supports fallback to pasted descriptions  
+- Designed for real usage, not ideal inputs  
 
-- **Python 3.12**
-- **Streamlit**
-- **PyMuPDF**
-- **OpenAI-compatible API** (optional)
-- supporting utility modules for parsing, matching, and recommendation logic
+---
 
-## Project structure
+### 5. Structured outputs over black-box AI
+- Transparent logic  
+- Clear reasoning  
+- Actionable recommendation  
 
-```text
-.
-├── app.py
-├── sample_data.py
-├── requirements.txt
-├── README.md
-├── .env.example
-├── utils/
-├── scripts/
-├── tests/
-└── pages/
+Not just “AI says yes/no.”
+
+---
+
+## 👤 Who this is for
+
+- Students applying for internships  
+- Early-career applicants screening roles  
+- Users exploring research opportunities  
+- Anyone who wants to filter opportunities before investing time  
+
+---
+
+## 🧱 Tech stack
+
+- **Python 3.12**  
+- **Streamlit**  
+- **PyMuPDF**  
+- **OpenAI-compatible API (optional)**  
+- Custom logic for parsing, matching, and decision scoring  
+
+---
+
+## 🧪 Project status
+
+This project is currently in **MVP / demo stage**, with:
+
+- deterministic logic for consistent testing  
+- optional LLM enhancement  
+- ongoing iteration on decision logic and UX  
+
+---
+
+## 🌱 Vision
+
+Deciora aims to become the **decision layer for early-career opportunities**.
+
+In a world where access is no longer the problem,  
+**judgment becomes the bottleneck.**
+
+---
+
+## 🔗 Demo
+
+👉 https://applypilot-aicareerengine.streamlit.app/
