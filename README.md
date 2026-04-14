@@ -1,8 +1,8 @@
-# PathPilot — AI Career Decision Engine
+# ApplyPilot — AI Career Decision Engine
 
-PathPilot is an AI-powered decision support tool that helps students and early-career applicants decide whether an opportunity is worth applying to.
+ApplyPilot is an AI-powered decision support tool that helps students and early-career applicants decide whether an opportunity is worth applying to.
 
-Instead of manually comparing a resume against a job post, PathPilot extracts role information, parses resume content, evaluates fit across multiple dimensions, flags potential risks, and returns a practical recommendation: **Apply**, **Consider**, or **Skip**.
+Instead of manually comparing a resume against a job post, ApplyPilot extracts role information, parses resume content, evaluates fit across multiple dimensions, flags potential risks, and returns a practical recommendation: **Apply**, **Consider**, or **Skip**.
 
 ## Why this project exists
 
@@ -13,11 +13,11 @@ Students and early-career applicants often face the same problem:
 - manually screening each opportunity takes too much time
 - many applicants apply too broadly without a clear decision process
 
-PathPilot is built to make the first application decision faster, clearer, and more intentional.
+ApplyPilot is built to make the first application decision faster, clearer, and more intentional.
 
 ## Core idea
 
-PathPilot is not just a resume keyword checker.
+ApplyPilot is not just a resume keyword checker.
 
 It is designed as a lightweight decision engine that combines:
 
@@ -68,7 +68,7 @@ The current MVP follows this workflow:
 
 ### 1. Decision-oriented, not just analysis-oriented
 Many tools stop at “match score” or generic resume feedback.  
-PathPilot is designed to answer a more practical question:
+ApplyPilot is designed to answer a more practical question:
 
 **Should this person apply to this opportunity or not?**
 
@@ -76,7 +76,7 @@ That makes the product more action-focused and more useful in real workflows.
 
 ### 2. Built for early-career users
 Most hiring tools are either too generic or too enterprise-focused.  
-PathPilot is specifically designed for:
+ApplyPilot is specifically designed for:
 
 - students
 - internship applicants
@@ -85,7 +85,7 @@ PathPilot is specifically designed for:
 
 ### 3. Handles messy real-world inputs
 Job pages are often inconsistent.  
-PathPilot is built with fallback logic, so it can still function when direct job extraction fails by using pasted job description text instead.
+ApplyPilot is built with fallback logic, so it can still function when direct job extraction fails by using pasted job description text instead.
 
 ### 4. Works without requiring a paid API
 The app can run in deterministic demo mode without API credentials, which makes it easier to test, demo, and iterate.
@@ -95,7 +95,7 @@ The logic is designed to produce a more interpretable recommendation rather than
 
 ## Who this is for
 
-PathPilot is currently most relevant for:
+ApplyPilot is currently most relevant for:
 
 - students applying for internships
 - early-career applicants screening entry-level roles
