@@ -166,4 +166,4 @@ In a world where access is no longer the problem,
 
 ## 🔗 Demo
 
-👉 https://applypilot-aicareerengine.streamlit.app/
+👉 https://decioraai.streamlit.app/
